@@ -1,4 +1,0 @@
-noSqlBenchmark
-==============
-
-noSQL Benchmarks
