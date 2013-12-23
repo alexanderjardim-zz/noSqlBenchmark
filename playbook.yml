@@ -1,0 +1,14 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+  - name: Install pip
+    apt: pkg=python-pip update_cache=yes
+  - name: Install Flask
+    pip: name=Flask
+  - name: Downloading Redis
+    get_url: url=http://download.redis.io/releases/redis-2.6.16.tar.gz dest=/home/vagrant
+  - name: Unpack Redis
+    command: tar xzf redis-2.6.16.tar.gz
+  - name: Compile Redis
+    command: chdir=/home/vagrant/redis-2.6.16 make
