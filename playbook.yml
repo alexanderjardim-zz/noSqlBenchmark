@@ -12,3 +12,5 @@
     command: tar xzf redis-2.6.16.tar.gz
   - name: Compile Redis
     command: chdir=/home/vagrant/redis-2.6.16 make
+  - name: Install Redis lib
+    pip: name=redis
